@@ -1,0 +1,134 @@
+/* Stats Section Styles */
+.stats-section {
+  background: #131415;
+  color: white;
+  padding: 20px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.stats-content {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.stats-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 60px;
+  color: #ffffff;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.stats-card {
+  text-align: center;
+  position: relative;
+}
+
+.stats-value {
+  font-size: 72px !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px;
+  line-height: 1;
+  color: #ffffff !important;
+}
+
+.stats-description {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #B0B0B0;
+  margin: 0;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 15px 0 60px;
+  }
+  
+  .stats-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .stats-value {
+    font-size: 60px !important;
+  }
+  
+  .stats-description {
+    font-size: 14px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-section {
+    padding: 10px 0 40px;
+  }
+  
+  .stats-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .stats-grid {
+    gap: 24px;
+    margin-top: 30px;
+  }
+  
+  .stats-value {
+    font-size: 52px !important;
+  }
+  
+  .stats-description {
+    font-size: 13px;
+    max-width: 200px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+} 
