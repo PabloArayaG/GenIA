@@ -25,8 +25,7 @@ return (
 
     <div className="description">
         Genia impulsa tu CX con un asistente inteligente que genera flujos
-        conversacionales,<br />
-        automatiza iteraciones y reduce la dependencia
+        conversacionales, automatiza iteraciones y reduce la dependencia
         técnica en todos tus canales.
     </div>
 
