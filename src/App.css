@@ -40,24 +40,43 @@ html, body {
   opacity: 0.27;
 }
 
-/* Desktop/Monitor grande (1920px+) */
-@media (min-width: 1920px) {
+/* Monitor muy grande 4K+ (2560px+) */
+@media (min-width: 2560px) {
   .background-gradient {
-    top: -15%;
+    top: -8%;
+    height: 160vh;
   }
 }
 
-/* Laptop/Desktop estándar (1366px - 1919px) */
+/* Monitor grande/Gaming 1440p+ (1920px - 2559px) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .background-gradient {
+    top: -3%;
+    height: 170vh;
+  }
+}
+
+/* Desktop/Laptop estándar 1080p (1366px - 1919px) */
 @media (min-width: 1366px) and (max-width: 1919px) {
   .background-gradient {
-    top: -5%;
+    top: -2%;
+    height: 180vh;
   }
 }
 
-/* Tablet/Laptop pequeño (768px - 1365px) */
-@media (min-width: 768px) and (max-width: 1365px) {
+/* Tablet/Laptop pequeño (1024px - 1365px) */
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .background-gradient {
+    top: -5%;
+    height: 180vh;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
   .background-gradient {
     top: 0%;
+    height: 190vh;
   }
 }
 
