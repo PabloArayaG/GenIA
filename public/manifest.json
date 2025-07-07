@@ -1,11 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "GenIA",
+  "name": "GenIA - Crea Chatbots y Agentes IA con Lenguaje Natural",
+  "description": "Plataforma de IA para crear chatbots inteligentes sin conocimientos técnicos",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "adereso-favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
       "src": "logo192.png",
@@ -20,6 +21,10 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait-primary",
+  "theme_color": "#1864ff",
+  "background_color": "#131415",
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "es",
+  "scope": "/"
 }
