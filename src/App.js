@@ -3,6 +3,8 @@ import VideoSection from "./components/VideoSection";
 import Separator from "./components/Separator";
 import ProblemSection from "./components/ProblemSection";
 import TransformSection from "./components/TransformSection";
+import TransformSection2 from "./components/TransformSection2";
+import Transform3 from "./components/Transform3";
 import CapabilitiesSection from "./components/CapabilitiesSection";
 import StatsSection from "./components/StatsSection";
 import WhatsAppSection from "./components/WhatsAppSection";
@@ -18,7 +20,11 @@ function App() {
       <Separator />
       <ProblemSection />
       <Separator />
-      <TransformSection />
+      {/* <TransformSection /> */}
+      {/* <Separator /> */}
+      {/* <TransformSection2 /> */}
+      {/* <Separator /> */}
+      <Transform3 />
       <Separator />
       <CapabilitiesSection />
       <Separator />

@@ -1,0 +1,543 @@
+/* Transform2 Section Styles */
+.transform2-section {
+  background: #131415;
+  color: white;
+  padding: 40px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.transform2-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.transform2-content {
+  text-align: center;
+}
+
+.transform2-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  color: #ffffff;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1.2s ease-out;
+}
+
+.transform2-section.visible .transform2-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transform2-title .highlight {
+  color: rgba(24, 100, 255, 1);
+}
+
+/* Contenedor para las 2 cards de arriba */
+.transform2-cards-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+/* Separador sutil entre las 2 cards de arriba */
+.transform2-cards-top::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  opacity: 0;
+  transition: opacity 1.0s ease-out 1.8s;
+}
+
+.transform2-section.visible .transform2-cards-top::after {
+  opacity: 1;
+}
+
+/* Separador vertical entre las 2 cards de arriba */
+.transform2-cards-top .transform2-card:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 150px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 1.0s ease-out 1.2s;
+}
+
+.transform2-section.visible .transform2-cards-top .transform2-card:nth-child(1)::after {
+  opacity: 1;
+}
+
+/* Contenedor para las 3 cards de abajo */
+.transform2-cards-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  position: relative;
+}
+
+/* Separadores sutiles entre las 3 cards de abajo */
+.transform2-cards-bottom .transform2-card:nth-child(1)::after,
+.transform2-cards-bottom .transform2-card:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 1.0s ease-out;
+}
+
+.transform2-section.visible .transform2-cards-bottom .transform2-card:nth-child(1)::after {
+  transition-delay: 2.2s;
+  opacity: 1;
+}
+
+.transform2-section.visible .transform2-cards-bottom .transform2-card:nth-child(2)::after {
+  transition-delay: 2.7s;
+  opacity: 1;
+}
+
+.transform2-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease-out;
+}
+
+/* Animaciones secuenciales para cada card */
+.transform2-section.visible .transform2-card-1 {
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transform2-section.visible .transform2-card-2 {
+  transition-delay: 1.0s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transform2-section.visible .transform2-card-3 {
+  transition-delay: 1.5s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transform2-section.visible .transform2-card-4 {
+  transition-delay: 2.0s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transform2-section.visible .transform2-card-5 {
+  transition-delay: 2.5s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transform2-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.transform2-card-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #B0B0B0;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.transform2-card-visual {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.transform2-real-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: filter 0.3s ease;
+}
+
+/* Primera imagen - más grande */
+.transform2-cards-top .transform2-card:nth-child(1) .transform2-real-image {
+  max-width: 600px;
+}
+
+/* Segunda imagen - más cuadrada */
+.transform2-cards-top .transform2-card:nth-child(2) .transform2-real-image {
+  max-width: 350px;
+}
+
+/* Placeholder para imágenes */
+.transform2-image-placeholder {
+  width: 100%;
+  max-width: 350px;
+  height: 200px;
+  background-color: #2A2A2A;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.transform2-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: #404040;
+  border-radius: 6px;
+  opacity: 0.5;
+}
+
+.transform2-real-image:hover {
+  filter: brightness(1.1);
+}
+
+/* Imagen clickeable */
+.transform2-real-image.clickable {
+  cursor: pointer;
+}
+
+/* Modal/Popup */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 50%;
+  max-height: 85%;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: none;
+  animation: zoomIn 0.3s ease-out;
+  overflow: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Scrollbar personalizado para el modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .transform2-section {
+    padding: 30px 0 60px;
+  }
+
+  .transform2-title {
+    font-size: 36px;
+  }
+
+  .transform2-cards-top {
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-bottom: 70px;
+  }
+
+  .transform2-cards-bottom {
+    gap: 25px;
+  }
+
+  .transform2-card-title {
+    font-size: 16px;
+  }
+
+  .transform2-card-description {
+    font-size: 13px;
+  }
+
+  .transform2-cards-top .transform2-card:nth-child(1) .transform2-real-image {
+    max-width: 500px;
+  }
+
+  .transform2-cards-top .transform2-card:nth-child(2) .transform2-real-image {
+    max-width: 300px;
+  }
+
+  .transform2-image-placeholder {
+    max-width: 300px;
+    height: 180px;
+  }
+
+  /* Ajustar separadores en tablet */
+  .transform2-cards-top::after {
+    bottom: -35px;
+    width: 150px;
+  }
+
+  .transform2-cards-top .transform2-card:nth-child(1)::after {
+    height: 120px;
+  }
+
+  .transform2-cards-bottom .transform2-card:nth-child(1)::after,
+  .transform2-cards-bottom .transform2-card:nth-child(2)::after {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transform2-section {
+    padding: 20px 0 40px;
+  }
+
+  .transform2-title {
+    font-size: 28px;
+  }
+
+  .transform2-cards-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .transform2-cards-bottom {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .transform2-card {
+    text-align: center;
+  }
+
+  .transform2-card-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .transform2-card-description {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .transform2-card-visual {
+    justify-content: center;
+  }
+
+  .transform2-cards-top .transform2-card:nth-child(1) .transform2-real-image,
+  .transform2-cards-top .transform2-card:nth-child(2) .transform2-real-image {
+    max-width: 350px;
+  }
+
+  .transform2-image-placeholder {
+    max-width: 350px;
+    height: 200px;
+  }
+
+  /* Ocultar separadores verticales en mobile */
+  .transform2-cards-top .transform2-card:nth-child(1)::after,
+  .transform2-cards-bottom .transform2-card:nth-child(1)::after,
+  .transform2-cards-bottom .transform2-card:nth-child(2)::after {
+    display: none;
+  }
+
+  /* Ajustar separador horizontal en mobile */
+  .transform2-cards-top::after {
+    bottom: -30px;
+    width: 140px;
+  }
+
+  /* Acelerar animaciones en mobile */
+  .transform2-section.visible .transform2-card-1 {
+    transition-delay: 0.4s;
+  }
+
+  .transform2-section.visible .transform2-card-2 {
+    transition-delay: 0.7s;
+  }
+
+  .transform2-section.visible .transform2-card-3 {
+    transition-delay: 1.0s;
+  }
+
+  .transform2-section.visible .transform2-card-4 {
+    transition-delay: 1.3s;
+  }
+
+  .transform2-section.visible .transform2-card-5 {
+    transition-delay: 1.6s;
+  }
+}
+
+@media (max-width: 480px) {
+  .transform2-section {
+    padding: 20px 0 40px;
+  }
+
+  .transform2-title {
+    font-size: 24px;
+  }
+
+  .transform2-cards-top {
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  .transform2-cards-bottom {
+    gap: 25px;
+  }
+
+  .transform2-card-title {
+    font-size: 16px;
+  }
+
+  .transform2-card-description {
+    font-size: 13px;
+  }
+
+  .transform2-cards-top .transform2-card:nth-child(1) .transform2-real-image,
+  .transform2-cards-top .transform2-card:nth-child(2) .transform2-real-image {
+    max-width: 300px;
+  }
+
+  .transform2-image-placeholder {
+    max-width: 300px;
+    height: 170px;
+  }
+
+  /* Ajustar separador horizontal en mobile pequeño */
+  .transform2-cards-top::after {
+    bottom: -25px;
+    width: 100px;
+  }
+
+  /* Animaciones más rápidas en mobile pequeño */
+  .transform2-section.visible .transform2-card-1 {
+    transition-delay: 0.3s;
+  }
+
+  .transform2-section.visible .transform2-card-2 {
+    transition-delay: 0.6s;
+  }
+
+  .transform2-section.visible .transform2-card-3 {
+    transition-delay: 0.9s;
+  }
+
+  .transform2-section.visible .transform2-card-4 {
+    transition-delay: 1.2s;
+  }
+
+  .transform2-section.visible .transform2-card-5 {
+    transition-delay: 1.5s;
+  }
+}

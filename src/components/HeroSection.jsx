@@ -30,7 +30,7 @@ return (
     </div>
 
     <a href="https://adereso.ai/contacto/" className="cta-button" target="_blank" rel="noopener noreferrer">
-        <div>Habla con un experto</div>
+        <div>Agendar una demo</div>
     </a>
 
     <div className="hero-features">

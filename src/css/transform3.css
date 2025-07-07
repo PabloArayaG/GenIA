@@ -1,0 +1,235 @@
+/* Transform3 Section */
+.transform3-section {
+  padding: 80px 0;
+  background-color: #131415;
+  color: white;
+}
+
+.transform3-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.transform3-content {
+  width: 100%;
+}
+
+.transform3-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 100px;
+  line-height: 1.2;
+}
+
+.transform3-title .highlight {
+  color: #007bff;
+}
+
+.transform3-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Sidebar */
+.transform3-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.transform3-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.transform3-feature-wrapper {
+  /* Sin separadores para mantener minimalismo */
+}
+
+.transform3-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 12px 0;
+}
+
+.transform3-feature-item:hover .transform3-feature-title {
+  color: #ccc;
+}
+
+.transform3-feature-indicator {
+  width: 4px;
+  height: 20px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.transform3-feature-item.active .transform3-feature-indicator {
+  background-color: #007bff;
+}
+
+.transform3-feature-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #888;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.transform3-feature-item.active .transform3-feature-title {
+  color: white;
+}
+
+/* Descripción expandible - Efecto Accordion */
+.transform3-feature-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+  padding: 0;
+}
+
+.transform3-feature-description.expanded {
+  max-height: 200px;
+  opacity: 1;
+  padding: 16px 0 0 0;
+}
+
+.transform3-feature-description p {
+  font-size: 15px;
+  color: #aaa;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* Main content area */
+.transform3-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.transform3-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.transform3-main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 0.5s ease;
+  animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .transform3-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .transform3-sidebar {
+    position: static;
+  }
+  
+  .transform3-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  
+  .transform3-feature-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px 40px;
+    justify-content: center;
+  }
+
+  .transform3-feature-wrapper {
+    flex-basis: calc(50% - 20px);
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transform3-section {
+    padding: 60px 0;
+  }
+  
+  .transform3-container {
+    padding: 0 16px;
+  }
+  
+  .transform3-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .transform3-feature-list {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .transform3-feature-wrapper {
+    flex-basis: auto;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .transform3-feature-description {
+    padding: 0;
+  }
+
+  .transform3-feature-description.expanded {
+    padding: 16px 0 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .transform3-title {
+    font-size: 28px;
+    margin-bottom: 50px;
+    line-height: 1.3;
+  }
+
+  .transform3-feature-title {
+    font-size: 16px;
+  }
+
+  .transform3-feature-list {
+    gap: 16px;
+  }
+
+  .transform3-feature-description {
+    padding: 0;
+  }
+
+  .transform3-feature-description.expanded {
+    padding: 12px 0 0 0;
+  }
+}

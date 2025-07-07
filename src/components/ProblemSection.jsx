@@ -1,5 +1,7 @@
 import React from 'react';
 import '../css/problemsection.css';
+import dineroIcon from '../assets/dinero.png';
+import sadIcon from '../assets/sad.png';
 
 const ProblemSection = () => {
   return (
@@ -31,10 +33,7 @@ const ProblemSection = () => {
             
             <div className="problem-card">
               <div className="problem-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7L12 2Z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                  <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src={dineroIcon} alt="Cambios costosos" width="32" height="32" />
               </div>
               <h3 className="problem-card-title">Cambios costosos</h3>
               <p className="problem-card-description">
@@ -44,12 +43,7 @@ const ProblemSection = () => {
             
             <div className="problem-card">
               <div className="problem-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M17 11v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M21 14h-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
+                <img src={sadIcon} alt="Clientes frustrados" width="32" height="32" />
               </div>
               <h3 className="problem-card-title">Clientes frustrados</h3>
               <p className="problem-card-description">
