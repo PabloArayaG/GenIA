@@ -22,7 +22,7 @@
   "start_url": ".",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#1864ff",
+  "theme_color": "#131415",
   "background_color": "#131415",
   "categories": ["business", "productivity", "utilities"],
   "lang": "es",
