@@ -49,7 +49,6 @@ return (
     </div>
 
     <div className="product-image-container">
-        <div className="gaussian-overlay"></div>
         <img
         src="/product.png"
         alt="Product Demo"

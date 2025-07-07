@@ -15,7 +15,6 @@
 
 .capabilities-content {
   text-align: center;
-  animation: fadeInUp 1s ease-out;
 }
 
 .capabilities-title {
@@ -39,7 +38,6 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
   margin-top: 60px;
-  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .capability-card {
@@ -88,16 +86,40 @@
   margin: 0;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from {
+/* Subtle and Elegant Animations */
+
+/* Initial states - hidden */
+.capabilities-title {
+  opacity: 1;
+  transform: none;
+}
+
+.capability-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Animated states */
+.capability-card.animate-card {
+  animation: subtleFadeIn 1.6s ease-out forwards;
+}
+
+/* Simple and elegant keyframe */
+@keyframes subtleFadeIn {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Subtle hover enhancement */
+.capability-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
 }
 
 /* Responsive Design */

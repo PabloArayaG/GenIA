@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../css/capabilitiessection.css';
 
 const CapabilitiesSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
   const capabilities = [
     {
       title: "Crear agentes IA desde cero",
@@ -29,8 +31,40 @@ const CapabilitiesSection = () => {
     }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Función para calcular el delay basado en posición del grid
+  const getAnimationDelay = (index) => {
+    const baseDelay = 0.2; // Delay inicial
+    const cardDelay = 0.15; // Delay entre tarjetas para mejor percepción
+    
+    return baseDelay + (index * cardDelay);
+  };
+
   return (
-    <section className="capabilities-section">
+    <section ref={sectionRef} className={`capabilities-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="capabilities-container">
         <div className="capabilities-content">
           <h2 className="capabilities-title">
@@ -39,7 +73,11 @@ const CapabilitiesSection = () => {
           
           <div className="capabilities-grid">
             {capabilities.map((capability, index) => (
-              <div key={index} className="capability-card">
+              <div 
+                key={index} 
+                className={`capability-card ${isVisible ? 'animate-card' : ''}`}
+                style={{ animationDelay: `${getAnimationDelay(index)}s` }}
+              >
                 <div className="capability-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/>

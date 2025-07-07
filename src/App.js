@@ -22,8 +22,8 @@ function App() {
       <Separator />
       {/* <TransformSection /> */}
       {/* <Separator /> */}
-      {/* <TransformSection2 /> */}
-      {/* <Separator /> */}
+      {/*<TransformSection2 /> */}
+       {/* <Separator /> */}
       <Transform3 />
       <Separator />
       <CapabilitiesSection />
