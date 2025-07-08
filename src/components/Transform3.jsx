@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/transform3.css';
 import creaBotOriginalImage from '../assets/crea-4.png';
 import noCodeImage from '../assets/No-code2.png';
@@ -9,6 +9,7 @@ import analizaImgImage from '../assets/imganalisis.png';
 const Transform3 = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
   const [expandedFeature, setExpandedFeature] = useState(null);
+  const [imageLoading, setImageLoading] = useState(false);
 
   const features = [
     {
@@ -44,7 +45,16 @@ const Transform3 = () => {
   ];
 
   const handleFeatureClick = (index) => {
-    setSelectedFeature(index);
+    if (selectedFeature !== index) {
+      setImageLoading(true);
+      
+      // Timing perfecto para máxima elegancia
+      setTimeout(() => {
+        setSelectedFeature(index);
+        setImageLoading(false);
+      }, 600);
+    }
+    
     // Toggle la expansión: si ya está expandido, se colapsa; si no, se expande
     setExpandedFeature(expandedFeature === index ? null : index);
   };
@@ -81,14 +91,13 @@ const Transform3 = () => {
               </div>
             </div>
 
-            {/* Imagen principal a la derecha - sin overlay */}
+            {/* Imagen principal a la derecha - con animación elegante */}
             <div className="transform3-main">
               <div className="transform3-image-container">
                 <img
                   src={features[selectedFeature].image}
                   alt={features[selectedFeature].title}
-                  className="transform3-main-image"
-                  key={selectedFeature} // Force re-render for animation
+                  className={`transform3-main-image ${imageLoading ? 'loading' : 'loaded'}`}
                 />
               </div>
             </div>

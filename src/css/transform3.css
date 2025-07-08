@@ -92,15 +92,15 @@
 .transform3-feature-description {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+  transition: max-height 0.3s ease-out;
   opacity: 0;
   padding: 0;
 }
 
 .transform3-feature-description.expanded {
-  max-height: 200px;
+  max-height: 120px;
   opacity: 1;
-  padding: 16px 0 0 0;
+  padding: 12px 0 0 0;
 }
 
 .transform3-feature-description p {
@@ -109,6 +109,7 @@
   line-height: 1.5;
   margin: 0;
   text-align: left;
+  transition: opacity 0.2s ease-out 0.1s;
 }
 
 /* Main content area */
@@ -122,24 +123,39 @@
   position: relative;
   width: 100%;
   max-width: 520px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .transform3-main-image {
   width: 100%;
   height: auto;
   display: block;
-  transition: all 0.5s ease;
-  animation: fadeInScale 0.5s ease-out;
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  transform-origin: center center;
+}
+
+.transform3-main-image.loading {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+}
+
+.transform3-main-image.loaded {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 @keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(10px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(0);
   }
 }
 
@@ -157,7 +173,7 @@
   .transform3-title {
     font-size: 36px;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
   }
   
   .transform3-feature-list {
@@ -186,12 +202,12 @@
   .transform3-title {
     font-size: 32px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   
   .transform3-feature-list {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     align-items: center;
   }
 
@@ -201,19 +217,24 @@
     max-width: 400px;
   }
   
+  .transform3-image-container {
+    min-height: 250px;
+  }
+  
   .transform3-feature-description {
     padding: 0;
   }
 
   .transform3-feature-description.expanded {
-    padding: 16px 0 0 0;
+    padding: 10px 0 0 0;
+    max-height: 100px;
   }
 }
 
 @media (max-width: 480px) {
   .transform3-title {
     font-size: 28px;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     line-height: 1.3;
   }
 
@@ -222,7 +243,11 @@
   }
 
   .transform3-feature-list {
-    gap: 16px;
+    gap: 14px;
+  }
+  
+  .transform3-image-container {
+    min-height: 200px;
   }
 
   .transform3-feature-description {
@@ -230,6 +255,7 @@
   }
 
   .transform3-feature-description.expanded {
-    padding: 12px 0 0 0;
+    padding: 8px 0 0 0;
+    max-height: 80px;
   }
 }
