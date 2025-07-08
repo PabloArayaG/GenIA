@@ -14,11 +14,6 @@ const Finalcta = () => {
             autonomía total
           </h2>
           
-          {/* Subtítulo */}
-          <p className="final-cta-subtitle">
-            Estás a un paso de la autonomía total en tu atención
-          </p>
-          
           {/* Descripción */}
           <p className="final-cta-description">
             Con Genia, diseñas experiencias a tu ritmo, sin tickets de soporte ni semanas de espera.
