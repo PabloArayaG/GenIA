@@ -46,7 +46,7 @@
 
 .whatsapp-badge {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
   color: #25D366;
   margin: 0;
   line-height: 1.2;
@@ -75,15 +75,15 @@
 }
 
 .whatsapp-title {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 600;
   color: white;
   margin-bottom: 32px;
   line-height: 1.15;
 }
 
 .whatsapp-description {
-  font-size: 20px;
+  font-size: 18px;
   color: #B8B8B8;
   margin-bottom: 56px;
   line-height: 1.6;
@@ -130,14 +130,14 @@
 }
 
 .feature-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: white;
   margin-bottom: 6px;
 }
 
 .feature-description {
-  font-size: 15px;
+  font-size: 16px;
   color: #B0B0B0;
   margin: 0;
   line-height: 1.5;
@@ -172,12 +172,12 @@
   }
   
   .whatsapp-title {
-    font-size: 32px;
+    font-size: 44px;
     margin-bottom: 28px;
   }
   
   .whatsapp-description {
-    font-size: 19px;
+    font-size: 17px;
     margin-bottom: 48px;
   }
   
@@ -191,11 +191,11 @@
   }
   
   .feature-title {
-    font-size: 15px;
+    font-size: 18px;
   }
   
   .feature-description {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
@@ -234,13 +234,13 @@
   }
   
   .whatsapp-title {
-    font-size: 32px;
+    font-size: 40px;
     margin-bottom: 24px;
     line-height: 1.2;
   }
   
   .whatsapp-description {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 40px;
     line-height: 1.5;
     color: #C0C0C0;
@@ -283,7 +283,7 @@
   }
   
   .feature-description {
-    font-size: 16px;
+    font-size: 15px;
     color: #B8B8B8;
     line-height: 1.4;
   }
@@ -317,12 +317,12 @@
   }
   
   .whatsapp-title {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 20px;
   }
   
   .whatsapp-description {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 32px;
   }
   
@@ -337,7 +337,7 @@
   }
   
   .feature-title {
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 6px;
   }
   
@@ -374,12 +374,12 @@
   }
   
   .whatsapp-title {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 16px;
   }
   
   .whatsapp-description {
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 28px;
   }
   
@@ -394,11 +394,11 @@
   }
   
   .feature-title {
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 4px;
   }
   
   .feature-description {
-    font-size: 13px;
+    font-size: 14px;
   }
 } 
