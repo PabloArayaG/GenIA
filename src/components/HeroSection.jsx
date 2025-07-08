@@ -74,7 +74,7 @@ return (
         className="product-image"
         loading="eager"
         decoding="async"
-        fetchpriority="high"
+        fetchPriority="high"
         />
     </div>
     </div>

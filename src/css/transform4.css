@@ -1,0 +1,498 @@
+/* InputDesign Component Styles */
+.input-design-container {
+  position: relative;
+  max-width: 500px;
+  min-height: 650px;
+  padding: 40px 20px 60px;
+  margin: 0 auto;
+  font-family:
+    Karla,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+}
+
+
+
+.chat-interface {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  color: #ffffff;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 550px;
+  padding: 20px 0;
+}
+
+/* Chat Message Base Styles - Clases específicas por ID */
+.chat-message-1,
+.chat-message-2,
+.chat-message-3,
+.chat-message-4 {
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.user-message {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 4px;
+  padding-left: 10%;
+}
+
+.genia-message {
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 4px;
+  padding-right: 10%;
+}
+
+/* Clases específicas para cada burbuja */
+.user-bubble-1,
+.user-bubble-3 {
+  /* Burbujas de usuario - sin animaciones adicionales */
+  position: relative;
+  will-change: auto; /* Optimización para evitar re-renders */
+}
+
+.ai-bubble-2,
+.ai-bubble-4 {
+  /* Burbujas de Genia - sin animaciones adicionales */
+  position: relative;
+  will-change: auto; /* Optimización para evitar re-renders */
+}
+
+/* Estados específicos para evitar interferencias */
+.chat-message-1 {
+  z-index: 1;
+}
+
+.chat-message-2 {
+  z-index: 2;
+}
+
+.chat-message-3 {
+  z-index: 3;
+}
+
+.chat-message-4 {
+  z-index: 4;
+}
+
+/* Estilo específico para el mensaje largo de Genia (ID 2) */
+.chat-message-2 {
+  padding-right: 0; /* Quitar padding para que llegue al tope izquierdo */
+}
+
+.ai-bubble-2 {
+  max-width: 100%; /* Ocupar todo el ancho disponible */
+}
+
+.chat-message-2 .ai-message {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+/* Estilo específico para el mensaje "Analizando..." */
+.ai-bubble-4 {
+  max-width: 200px;
+}
+
+.chat-message-4 .ai-response-content {
+  padding: 12px 16px;
+}
+
+.chat-message-4 .ai-message {
+  font-size: 14px;
+}
+
+.user-input-bubble {
+  border-radius: 8px;
+  border: 1px solid #2D2E2E;
+  background: #131415;
+  box-shadow: 0px 0px 1px 0px rgba(19, 20, 21, 0.15), 0px 12px 24px 0px rgba(19, 20, 21, 0.12);
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 85%;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.user-input-bubble:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 0px 1px 0px rgba(19, 20, 21, 0.15), 0px 16px 32px 0px rgba(19, 20, 21, 0.18);
+}
+
+.user-input-content {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  justify-content: center;
+  padding: 16px 20px;
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+.user-text {
+  color: #ffffff;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  font-weight: 500;
+}
+
+/* AI Response Styles - now handled by .chat-message.genia */
+
+.ai-response-bubble {
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: linear-gradient(#131415, #131415) padding-box,
+              linear-gradient(135deg, #8b5cf6, #f59e0b) border-box;
+  box-shadow:
+    0px 0px 8px 0px rgba(139, 92, 246, 0.3),
+    0px 0px 16px 0px rgba(245, 158, 11, 0.2),
+    0px 4px 12px 0px rgba(0, 0, 0, 0.4);
+  max-width: 95%;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ai-response-bubble:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0px 0px 12px 0px rgba(139, 92, 246, 0.4),
+    0px 0px 20px 0px rgba(245, 158, 11, 0.3),
+    0px 6px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Pulse effect for "Creando Bot..." message - Solo para AI bubble 4 */
+.ai-bubble-4.pulse {
+  animation: geniaGlow 1.5s ease-in-out infinite;
+}
+
+/* Asegurar que las otras burbujas no tengan animaciones no deseadas */
+.ai-bubble-2.pulse {
+  animation: none;
+}
+
+.user-bubble-1,
+.user-bubble-3 {
+  animation: none;
+}
+
+.ai-bubble-2 {
+  animation: none;
+}
+
+@keyframes geniaGlow {
+  0%, 100% {
+    box-shadow:
+      0px 0px 8px 0px rgba(139, 92, 246, 0.3),
+      0px 0px 16px 0px rgba(245, 158, 11, 0.2),
+      0px 4px 12px 0px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow:
+      0px 0px 16px 0px rgba(139, 92, 246, 0.6),
+      0px 0px 24px 0px rgba(245, 158, 11, 0.4),
+      0px 4px 16px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.ai-response-content {
+  align-items: flex-start;
+  border-radius: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  background-color: #131415;
+  padding: 16px 20px;
+}
+
+.ai-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  justify-content: flex-start;
+}
+
+/* Icono AI antes del texto Genia */
+.ai-header::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url('../assets/AI-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.ai-sender {
+  color: #ffffff;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  text-overflow: ellipsis;
+  align-self: stretch;
+  margin: auto 0;
+  font-weight: 600;
+}
+
+.ai-message {
+  color: #ffffff;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-top: 0px;
+  white-space: pre-line;
+}
+
+/* Estilo para las listas numeradas en los mensajes de Genia */
+.ai-message p {
+  margin: 0 0 8px 0;
+}
+
+.ai-message br + br {
+  display: block;
+  margin: 8px 0;
+}
+
+/* Mejor espaciado para mensajes con emojis y múltiples líneas */
+.ai-message {
+  word-spacing: normal;
+  letter-spacing: normal;
+}
+
+/* Chat Decorations */
+.chat-decorations {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 300px;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.decoration-dot {
+  aspect-ratio: 1;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(24, 100, 255, 0.3) 0%,
+    rgba(24, 100, 255, 0.1) 50%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  position: absolute;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.decoration-dot-1 {
+  left: 0px;
+  right: 0px;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.decoration-dot-2 {
+  left: 0px;
+  right: 0px;
+  top: 70%;
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-design-container {
+    max-width: 450px;
+    min-height: 500px;
+    padding: 30px 16px 50px;
+  }
+  
+  .chat-interface {
+    gap: 16px;
+    min-height: 400px;
+    padding: 15px 0;
+  }
+
+  .user-input-bubble,
+  .ai-response-bubble {
+    font-size: 13px;
+  }
+
+  .ai-message {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .ai-header {
+    font-size: 11px;
+  }
+
+  .ai-header::before {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-design-container {
+    max-width: 380px;
+    min-height: 450px;
+    padding: 20px 12px 40px;
+  }
+  
+  .chat-interface {
+    gap: 12px;
+    min-height: 350px;
+    padding: 10px 0;
+  }
+
+  .user-input-content,
+  .ai-response-content {
+    padding: 12px 16px;
+  }
+
+  .user-input-bubble,
+  .ai-response-bubble {
+    font-size: 12px;
+  }
+
+  .ai-message {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .ai-header {
+    font-size: 10px;
+  }
+
+  .ai-header::before {
+    width: 12px;
+    height: 12px;
+  }
+
+  .chat-decorations {
+    width: 8px;
+    height: 250px;
+    left: -15px;
+  }
+}
+
+/* Animation Enhancements - Deshabilitadas para evitar conflictos */
+.message-wrapper {
+  /* Animaciones removidas - controladas por Framer Motion */
+}
+
+.user-message .message-wrapper {
+  /* Animaciones removidas - controladas por Framer Motion */
+}
+
+/* Keyframes comentados para evitar conflictos
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInUserMessage {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+*/
+
+/* Typing indicator animation - Deshabilitada para evitar conflictos */
+.ai-response-bubble[data-typing="true"] {
+  /* animation: typingPulse 1.5s ease-in-out infinite; */
+}
+
+/* @keyframes typingPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+} */
+
+/* CSS Variables for theming */
+:root {
+  --texto-principal: #efeff1;
+  --fondos-base-0: #131415;
+  --fondos-base-2: #2d2e2e;
+  --ai-stroke: #1864ff;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --texto-principal: #efeff1;
+    --fondos-base-0: #131415;
+    --fondos-base-2: #2d2e2e;
+    --ai-stroke: #1864ff;
+  }
+}
+
+/* Light theme support */
+@media (prefers-color-scheme: light) {
+  :root {
+    --texto-principal: #0c0c0d;
+    --fondos-base-0: #ffffff;
+    --fondos-base-2: #e0e0e0;
+    --ai-stroke: #1864ff;
+  }
+}

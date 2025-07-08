@@ -1,0 +1,262 @@
+/* Transform5 Section - Combinación de acordeón + chat animation */
+.transform5-section {
+  padding: 20px 0 80px 0; /* Agregar 80px de padding-bottom para espacio con el separador */
+  background-color: #131415;
+  color: white;
+}
+
+.transform5-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: 0; /* Eliminar cualquier margin bottom */
+}
+
+.transform5-content {
+  width: 100%;
+}
+
+.transform5-title {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 120px; /* Aumentar espaciado para que respire mejor */
+  line-height: 1.2;
+}
+
+.transform5-title .highlight {
+  color: #007bff;
+}
+
+.transform5-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 0; /* Eliminar margin bottom del layout */
+}
+
+/* Sidebar - Acordeón */
+.transform5-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.transform5-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.transform5-feature-wrapper {
+  /* Sin separadores para mantener minimalismo */
+}
+
+.transform5-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 12px 0;
+}
+
+.transform5-feature-item:hover .transform5-feature-title {
+  color: #ccc;
+}
+
+.transform5-feature-indicator {
+  width: 4px;
+  height: 20px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.transform5-feature-item.active .transform5-feature-indicator {
+  background-color: #007bff;
+}
+
+.transform5-feature-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #888;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.transform5-feature-item.active .transform5-feature-title {
+  color: white;
+}
+
+/* Descripción expandible - Efecto Accordion */
+.transform5-feature-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  opacity: 0;
+  padding: 0;
+}
+
+.transform5-feature-description.expanded {
+  max-height: 120px;
+  opacity: 1;
+  padding: 12px 0 0 0;
+}
+
+.transform5-feature-description p {
+  font-size: 15px;
+  color: #aaa;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+  transition: opacity 0.2s ease-out 0.1s;
+}
+
+/* Main content area - Chat Animation */
+.transform5-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto; /* Cambiar a auto para que se ajuste al contenido */
+  padding: 0 0 80px 0; /* Agregar 80px de padding-bottom */
+  margin-bottom: 0; /* Asegurar que no hay margin extra */
+}
+
+/* El contenedor del chat usa los estilos de Transform4 */
+
+/* Ajustar padding del contenedor de chat para Transform5 */
+.transform5-main .input-design-container {
+  padding: 0px 20px 0px; /* Eliminar completamente el padding-bottom */
+  margin-top: 0; /* Cambiar de -50px a 0 */
+  min-height: auto; /* Cambiar de 650px por defecto a auto */
+  height: auto; /* Asegurar que se ajuste al contenido */
+}
+
+/* Reducir height específico del chat-interface en Transform5 */
+.transform5-main .chat-interface {
+  min-height: auto; /* Cambiar a auto para que se ajuste exactamente al contenido */
+  padding: 5px 0; /* Reducir padding aún más a 5px */
+}
+
+/* Estilos específicos para Transform5 - Extender primera burbuja de usuario */
+.transform5-main .chat-message-1 {
+  padding-left: 0; /* Quitar padding para que llegue al tope derecho */
+}
+
+.transform5-main .user-bubble-1 {
+  max-width: 100%; /* Ocupar todo el ancho disponible */
+}
+
+/* Alineación a la izquierda para mensajes específicos */
+.transform5-main .chat-message-1 .user-text {
+  text-align: left;
+}
+
+.transform5-main .chat-message-3 .user-text {
+  text-align: left;
+}
+
+.transform5-main .chat-message-4 .ai-message {
+  text-align: left;
+}
+
+/* Ocultar las decoraciones azules en Transform5 */
+.transform5-main .chat-decorations {
+  display: none;
+}
+
+/* Reducir espacio del separador que viene después de Transform5 */
+.transform5-section + .separator-container {
+  padding-top: 0; /* Eliminar padding superior del separador siguiente */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .transform5-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .transform5-sidebar {
+    position: static;
+  }
+  
+  .transform5-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  .transform5-feature-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px 40px;
+    justify-content: center;
+  }
+
+  .transform5-feature-wrapper {
+    flex-basis: calc(50% - 20px);
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transform5-section {
+    padding: 60px 0;
+  }
+
+  .transform5-container {
+    padding: 0 16px;
+  }
+
+  .transform5-title {
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
+
+  .transform5-feature-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .transform5-feature-wrapper {
+    flex-basis: auto;
+    min-width: auto;
+  }
+
+  .transform5-feature-description {
+    max-height: 100px;
+  }
+
+  .transform5-feature-description.expanded {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transform5-title {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 50px;
+  }
+
+  .transform5-feature-title {
+    font-size: 16px;
+  }
+
+  .transform5-feature-list {
+    gap: 12px;
+  }
+
+  .transform5-feature-description {
+    max-height: 80px;
+  }
+
+  .transform5-feature-description.expanded {
+    max-height: 80px;
+  }
+} 

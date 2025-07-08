@@ -6,6 +6,12 @@ const VideoSection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    // Cargar script de Wistia
+    const script = document.createElement('script');
+    script.src = 'https://fast.wistia.net/player.js';
+    script.async = true;
+    document.head.appendChild(script);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +29,14 @@ const VideoSection = () => {
       observer.observe(titleElement);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      // Limpiar script si existe
+      const existingScript = document.querySelector('script[src="https://fast.wistia.net/player.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
   }, [hasAnimated]);
 
   const animateCounter = () => {
@@ -70,12 +83,21 @@ const VideoSection = () => {
           </p>
           
           <div className="video-player">
-            <div className="video-placeholder">
-              <button className="play-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
-                </svg>
-              </button>
+            <div className="wistia_responsive_padding" style={{padding:'50.0% 0 0 0', position:'relative'}}>
+              <div className="wistia_responsive_wrapper" style={{height:'100%', left:0, position:'absolute', top:0, width:'100%'}}>
+                <iframe 
+                  src="https://fast.wistia.net/embed/iframe/s17qadp6i1?web_component=true&seo=true" 
+                  title="VideoAderesoAI-genia-CXDay" 
+                  allow="autoplay; fullscreen" 
+                  allowTransparency="true" 
+                  frameBorder="0" 
+                  scrolling="no" 
+                  className="wistia_embed" 
+                  name="wistia_embed" 
+                  width="100%" 
+                  height="100%"
+                />
+              </div>
             </div>
           </div>
           

@@ -64,45 +64,21 @@
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
-.video-placeholder {
-  background: linear-gradient(135deg, #2C3E50 0%, #3E4A59 100%);
+/* Estilos para el embed de Wistia */
+.wistia_responsive_padding {
   border-radius: 16px;
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.video-placeholder:hover {
+.wistia_responsive_padding:hover {
   transform: translateY(-5px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
-.play-button {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: #2C3E50;
-}
-
-.play-button:hover {
-  background: white;
-  transform: scale(1.1);
-}
-
-.play-button svg {
-  margin-left: 3px;
+.wistia_embed {
+  border-radius: 16px;
 }
 
 .video-info {
@@ -150,10 +126,7 @@
     margin-bottom: 50px;
   }
   
-  .play-button {
-    width: 70px;
-    height: 70px;
-  }
+
   
   .video-subtitle {
     font-size: 19px;
@@ -179,10 +152,7 @@
     margin-bottom: 40px;
   }
   
-  .play-button {
-    width: 60px;
-    height: 60px;
-  }
+
   
   .video-subtitle {
     font-size: 18px;
@@ -208,10 +178,7 @@
     margin-bottom: 35px;
   }
   
-  .play-button {
-    width: 50px;
-    height: 50px;
-  }
+
   
   .video-subtitle {
     font-size: 17px;
@@ -238,10 +205,7 @@
     margin-bottom: 30px;
   }
   
-  .play-button {
-    width: 45px;
-    height: 45px;
-  }
+
   
   .video-subtitle {
     font-size: 16px;
