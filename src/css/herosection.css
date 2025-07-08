@@ -249,6 +249,7 @@
   animation: fadeInUp 0.8s ease-out 0.8s both;
   max-width: 900px;
   line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (max-width: 1024px) {

@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../css/herosection.css';
 
 function HeroSection() {
+  
+  useEffect(() => {
+    // Preload de la imagen hero crítica para LCP
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = '/product.png';
+    link.type = 'image/png';
+    document.head.appendChild(link);
+    
+    return () => {
+      if (document.head.contains(link)) {
+        document.head.removeChild(link);
+      }
+    };
+  }, []);
+
 return (
 <div className="hero-section">
     <div className="content-container">
@@ -12,6 +29,8 @@ return (
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/93244b6cbef22363c386a69aaad3c2daab4f77ed?placeholderIfAbsent=true"
         alt="GenIA AI Icon"
         className="icon"
+        loading="eager"
+        decoding="async"
         />
         <div className="button-container">
         <div className="button-text">GenIA</div>
@@ -53,6 +72,9 @@ return (
         src="/product.png"
         alt="Product Demo"
         className="product-image"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
         />
     </div>
     </div>

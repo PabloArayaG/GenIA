@@ -29,8 +29,8 @@
 
 .transform3-layout {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 40px;
   align-items: start;
 }
 
@@ -122,30 +122,36 @@
 .transform3-image-container {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  min-height: 300px;
+  max-width: 510px;
+  min-height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Optimización de rendimiento */
+  contain: layout style paint;
+  transform: translateZ(0);
 }
 
 .transform3-main-image {
   width: 100%;
   height: auto;
   display: block;
-  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
   transform-origin: center center;
+  /* Evitar layout shift reservando espacio */
+  min-height: 300px;
+  object-fit: contain;
 }
 
 .transform3-main-image.loading {
   opacity: 0;
-  transform: translateY(20px) scale(0.96);
+  transform: translate3d(0, 20px, 0) scale3d(0.96, 0.96, 1);
 }
 
 .transform3-main-image.loaded {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
 }
 
 @keyframes fadeInScale {
@@ -218,7 +224,12 @@
   }
   
   .transform3-image-container {
-    min-height: 250px;
+    min-height: 270px;
+    max-width: 470px;
+  }
+  
+  .transform3-main-image {
+    min-height: 240px;
   }
   
   .transform3-feature-description {
@@ -247,7 +258,12 @@
   }
   
   .transform3-image-container {
-    min-height: 200px;
+    min-height: 210px;
+    max-width: 90%;
+  }
+  
+  .transform3-main-image {
+    min-height: 185px;
   }
 
   .transform3-feature-description {
