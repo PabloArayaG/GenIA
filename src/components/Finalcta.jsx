@@ -42,7 +42,7 @@ const Finalcta = () => {
           
           {/* CTA Button igual al hero */}
           <a href="https://adereso.ai/contacto/" className="final-cta-button" target="_blank" rel="noopener noreferrer">
-            <div>Agenda una demo</div>
+            <div>Agendar una demo</div>
           </a>
         </div>
       </div>
