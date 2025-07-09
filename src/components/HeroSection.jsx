@@ -37,9 +37,9 @@ return (
         </div>
     </div>
 
-    <div className="main-title">
+    <h1 className="main-title">
         Crea experiencias conversacionales en minutos, no semanas
-    </div>
+    </h1>
 
     <div className="description">
         Genia impulsa tu CX con un asistente inteligente que genera flujos
