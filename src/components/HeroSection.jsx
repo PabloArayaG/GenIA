@@ -4,17 +4,17 @@ import '../css/herosection.css';
 function HeroSection() {
   
   useEffect(() => {
-    // Preload de la imagen hero crítica para LCP
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = '/product.png';
-    link.type = 'image/png';
-    document.head.appendChild(link);
+    // Cargar script de Wistia
+    const script = document.createElement('script');
+    script.src = 'https://fast.wistia.net/player.js';
+    script.async = true;
+    document.head.appendChild(script);
     
     return () => {
-      if (document.head.contains(link)) {
-        document.head.removeChild(link);
+      // Limpiar script si existe
+      const existingScript = document.querySelector('script[src="https://fast.wistia.net/player.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
       }
     };
   }, []);
@@ -38,8 +38,7 @@ return (
     </div>
 
     <div className="main-title">
-        Crea, edita y mejora tus bots<br />
-        con solo pedirlo en lenguaje natural
+        Crea experiencias conversacionales en minutos, no semanas
     </div>
 
     <div className="description">
@@ -55,27 +54,35 @@ return (
     <div className="hero-features">
         <div className="hero-feature">
             <div className="feature-icon"></div>
-            <div className="feature-text">Ahorro en Costos de Soporte</div>
+            <div className="feature-text">Elimina dependencia técnica</div>
         </div>
         <div className="hero-feature">
             <div className="feature-icon"></div>
-            <div className="feature-text">Iteración Autónoma</div>
+            <div className="feature-text">Reduce tiempos de desarrollo</div>
         </div>
         <div className="hero-feature">
             <div className="feature-icon"></div>
-            <div className="feature-text">Agilidad para tu Cliente</div>
+            <div className="feature-text">Iteración autónoma</div>
         </div>
     </div>
 
     <div className="product-image-container">
-        <img
-        src="/product.png"
-        alt="Product Demo"
-        className="product-image"
-        loading="eager"
-        decoding="async"
-        fetchPriority="high"
-        />
+        <div className="wistia_responsive_padding" style={{padding:'50.0% 0 0 0', position:'relative'}}>
+            <div className="wistia_responsive_wrapper" style={{height:'100%', left:0, position:'absolute', top:0, width:'100%'}}>
+                <iframe 
+                src="https://fast.wistia.net/embed/iframe/s17qadp6i1?web_component=true&seo=true" 
+                title="VideoAderesoAI-genia-CXDay" 
+                allow="autoplay; fullscreen" 
+                allowTransparency="true" 
+                frameBorder="0" 
+                scrolling="no" 
+                className="wistia_embed" 
+                name="wistia_embed" 
+                width="100%" 
+                height="100%"
+                />
+            </div>
+        </div>
     </div>
     </div>
 </div>

@@ -18,7 +18,7 @@ function App() {
     >
       <div className="background-gradient" />
       <HeroSection />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <Separator />
       <ProblemSection />
       <Separator />

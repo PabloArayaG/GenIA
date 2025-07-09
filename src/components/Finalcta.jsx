@@ -34,10 +34,6 @@ const Finalcta = () => {
               <div className="final-cta-stat-value">+98%</div>
               <div className="final-cta-stat-label">Satisfacción</div>
             </div>
-            <div className="final-cta-stat-item">
-              <div className="final-cta-stat-value">100x</div>
-              <div className="final-cta-stat-label">Más rápido</div>
-            </div>
           </div>
           
           {/* CTA Button igual al hero */}

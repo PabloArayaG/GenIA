@@ -12,11 +12,6 @@ const StatsSection = () => {
       value: "83%",
       description: "menos costo asociado a iteración y soporte",
       color: "#1864FF"
-    },
-    {
-      value: "+98%",
-      description: "satisfacción gracias a tiempos de respuesta más bajos",
-      color: "#1864FF"
     }
   ];
 
