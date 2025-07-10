@@ -24,22 +24,21 @@ const Finalcta = () => {
             <strong>Potencia tu CX con inteligencia, velocidad y control.</strong>
           </p>
           
-          {/* Estadísticas */}
-          <div className="final-cta-stats">
-            <div className="final-cta-stat-item">
-              <div className="final-cta-stat-value">24/7</div>
-              <div className="final-cta-stat-label">Disponibilidad</div>
-            </div>
-            <div className="final-cta-stat-item">
-              <div className="final-cta-stat-value">+98%</div>
-              <div className="final-cta-stat-label">Satisfacción</div>
-            </div>
-          </div>
-          
           {/* CTA Button igual al hero */}
-          <a href="https://adereso.ai/contacto/" className="final-cta-button" target="_blank" rel="noopener noreferrer">
-            <div>Agendar una demo</div>
-          </a>
+          <button className="final-cta-button" onClick={() => {
+              const formulario = document.getElementById('formulario');
+              console.log('Final CTA button clicked, formulario element:', formulario);
+              if (formulario) {
+                formulario.scrollIntoView({ 
+                  behavior: 'smooth', 
+                  block: 'center'
+                });
+              } else {
+                console.error('Formulario element not found from Final CTA');
+              }
+          }}>
+            <div>Quiero conocer GenIA</div>
+          </button>
         </div>
       </div>
     </section>

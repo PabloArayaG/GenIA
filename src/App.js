@@ -7,6 +7,7 @@ import Transform5 from "./components/Transform5";
 import CapabilitiesSection from "./components/CapabilitiesSection";
 import StatsSection from "./components/StatsSection";
 import WhatsAppSection from "./components/WhatsAppSection";
+import Formulario from "./components/Formulario";
 import Finalcta from "./components/Finalcta";
 import "./App.css";
 
@@ -31,6 +32,7 @@ function App() {
       <CapabilitiesSection />
       <Separator />
       <StatsSection />
+      <Formulario />
       <Separator />
       <WhatsAppSection />
       <Separator />

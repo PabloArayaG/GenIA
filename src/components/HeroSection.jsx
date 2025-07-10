@@ -47,9 +47,20 @@ return (
         técnica en todos tus canales.
     </div>
 
-    <a href="https://adereso.ai/contacto/" className="cta-button" target="_blank" rel="noopener noreferrer">
-        <div>Agendar una demo</div>
-    </a>
+    <button className="cta-button" onClick={() => {
+        const formulario = document.getElementById('formulario');
+        console.log('Hero button clicked, formulario element:', formulario);
+        if (formulario) {
+          formulario.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center'
+          });
+        } else {
+          console.error('Formulario element not found');
+        }
+    }}>
+        <div>Quiero conocer GenIA</div>
+    </button>
 
     <div className="hero-features">
         <div className="hero-feature">
@@ -73,7 +84,7 @@ return (
                 src="https://fast.wistia.net/embed/iframe/s17qadp6i1?web_component=true&seo=true" 
                 title="VideoAderesoAI-genia-CXDay" 
                 allow="autoplay; fullscreen" 
-                allowTransparency="true" 
+                allowtransparency="true" 
                 frameBorder="0" 
                 scrolling="no" 
                 className="wistia_embed" 

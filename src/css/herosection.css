@@ -284,8 +284,9 @@
 }
 
 .cta-button {
-  border-radius: 8px;
-  background-color: rgba(24, 100, 255, 1);
+  border: none;
+  border-radius: 0.75rem;
+  background: #1864FF;
   display: flex;
   margin-top: 10px !important;
   width: 280px;
@@ -300,10 +301,14 @@
   animation: fadeInUp 0.8s ease-out 1s both;
   text-decoration: none;
   color: rgba(255, 255, 255, 1);
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
 }
 
 .cta-button:hover {
-  background-color: rgba(20, 85, 220, 1);
+  background: #1455DC;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(24, 100, 255, 0.3);
 }

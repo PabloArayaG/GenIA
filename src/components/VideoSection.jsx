@@ -38,7 +38,7 @@ const VideoSection = () => {
                   src="https://fast.wistia.net/embed/iframe/s17qadp6i1?web_component=true&seo=true" 
                   title="VideoAderesoAI-genia-CXDay" 
                   allow="autoplay; fullscreen" 
-                  allowTransparency="true" 
+                  allowtransparency="true" 
                   frameBorder="0" 
                   scrolling="no" 
                   className="wistia_embed" 

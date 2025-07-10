@@ -163,8 +163,9 @@
 
 /* Final CTA Button */
 .final-cta-button {
-  border-radius: 8px;
-  background-color: rgba(24, 100, 255, 1);
+  border: none;
+  border-radius: 0.75rem;
+  background: #1864FF;
   display: flex;
   margin-top: 16px;
   width: 280px;
@@ -181,10 +182,12 @@
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 600;
   text-decoration: none;
+  position: relative;
+  z-index: 10;
 }
 
 .final-cta-button:hover {
-  background-color: rgba(20, 85, 220, 1);
+  background: #1455DC;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(24, 100, 255, 0.3);
 }
